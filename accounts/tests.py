@@ -22,12 +22,12 @@ class customerTescase(TestCase):
                                 address='isfahan', phoneNumber='09131170826', acceptRuls=False)
         
         self.dataValid = {
-            "first_name":"Reza",
-            "last_name":"Zarean",
+            "first_name":"x",
+            "last_name":"Y",
             "customer":{
-                "birthDate":"1380-10-10",
+                "birthDate":"1370-1-20",
                 "address":"isfahan",
-                "phoneNumber":"09131170827",
+                "phoneNumber":"09*********",
                 "acceptRuls":True}
         }
 #***Login Valid Tests:
@@ -45,7 +45,7 @@ class customerTescase(TestCase):
         self.assertEqual(responses.status_code, status.HTTP_200_OK)
 
         data = {
-            "phoneNumber":"09131170825",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"1111"
         }
@@ -66,7 +66,7 @@ class customerTescase(TestCase):
         client = APIClient()
         #*** Send Otp
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True
         }
         responses = client.post(
@@ -78,7 +78,7 @@ class customerTescase(TestCase):
 
         #***Verify Token
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"1111"
         }
@@ -92,12 +92,12 @@ class customerTescase(TestCase):
         
         #***Signup user
         data ={
-            "first_name":"Reza",
-            "last_name":"Zarean",
+            "first_name":"X",
+            "last_name":"Y",
             "customer":{
-                "birthDate":"1380-10-10",
+                "birthDate":"1370-1-20",
                 "address":"isfahan",
-                "phoneNumber":"09131170823",
+                "phoneNumber":"09*********",
                 "acceptRuls":"True"}
         }
         responses = client.post(
@@ -115,7 +115,7 @@ class customerTescase(TestCase):
     def testInValid_login_tokenNotValid(self):
         client = APIClient()
         data = {
-            "phoneNumber":"09131170825",
+            "phoneNumber":"09*********",
             "isCustomer":True
         }
         responses = client.post(
@@ -126,7 +126,7 @@ class customerTescase(TestCase):
         self.assertEqual(responses.status_code, status.HTTP_200_OK)
 
         data = {
-            "phoneNumber":"09131170825",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"2222"
         }
@@ -141,7 +141,7 @@ class customerTescase(TestCase):
     def testInValid_login_notAuth_tokenNotValid(self):
         client = APIClient()
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True
         }
         responses = client.post(
@@ -152,7 +152,7 @@ class customerTescase(TestCase):
         self.assertEqual(responses.status_code, status.HTTP_200_OK)
 
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"2222"
         }
@@ -167,7 +167,7 @@ class customerTescase(TestCase):
         client = APIClient()
         #*** Send Otp
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True
         }
         responses = client.post(
@@ -179,7 +179,7 @@ class customerTescase(TestCase):
 
         #***Verify Token
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"1111"
         }
@@ -193,12 +193,12 @@ class customerTescase(TestCase):
         
         #***Signup user
         data ={
-            "first_name":"Reza",
-            "last_name":"Zarean",
+            "first_name":"X",
+            "last_name":"Y",
             "customer":{
-                "birthDate":"1380-10-10",
+                "birthDate":"1370-1-20",
                 "address":"isfahan",
-                "phoneNumber":"09131170829",
+                "phoneNumber":"09*********",
                 "acceptRuls":"True"}
         }
         responses = client.post(
@@ -212,7 +212,7 @@ class customerTescase(TestCase):
         client = APIClient()
         #*** Send Otp
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True
         }
         responses = client.post(
@@ -224,7 +224,7 @@ class customerTescase(TestCase):
 
         # #***Verify Token
         # data = {
-        #     "phoneNumber":"09131170823",
+        #     "phoneNumber":"09*********",
         #     "isCustomer":True,
         #     "token":"1111"
         # }
@@ -238,12 +238,12 @@ class customerTescase(TestCase):
         
         #***Signup user
         data ={
-            "first_name":"Reza",
-            "last_name":"Zarean",
+            "first_name":"X",
+            "last_name":"Y",
             "customer":{
-                "birthDate":"1380-10-10",
+                "birthDate":"1370-1-20",
                 "address":"isfahan",
-                "phoneNumber":"09131170823",
+                "phoneNumber":"09*********",
                 "acceptRuls":"True"}
         }
         responses = client.post(
@@ -258,7 +258,7 @@ class customerTescase(TestCase):
         client = APIClient()
         #*** Send Otp
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09********",
             "isCustomer":True
         }
         responses = client.post(
@@ -270,7 +270,7 @@ class customerTescase(TestCase):
 
         #***Verify Token
         data = {
-            "phoneNumber":"09131170823",
+            "phoneNumber":"09*********",
             "isCustomer":True,
             "token":"1111"
         }
@@ -283,13 +283,13 @@ class customerTescase(TestCase):
         self.assertEqual(responses.status_code, status.HTTP_202_ACCEPTED)
         
         #***Signup user
-        data ={
-            "first_name":"Reza",
-            "last_name":"Zarean",
+     data ={
+            "first_name":"X",
+            "last_name":"Y",
             "customer":{
-                "birthDate":"1380-10-10hhhhhh",
+                "birthDate":"1370-1-20",
                 "address":"isfahan",
-                "phoneNumber":"09131170823",
+                "phoneNumber":"09*********",
                 "acceptRuls":"True"}
         }
         responses = client.post(
